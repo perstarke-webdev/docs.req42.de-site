@@ -7,8 +7,8 @@
 
 # "real" deployment with github-pages but custom domain
 # -----------------------------------------------------
-url: https://faq.req42.de
-imageurl: https://faq.req42.de
+url: https://docs.req42.de
+imageurl: https://docs.req42.de
 baseurl:
 #######################################################
 
@@ -18,8 +18,8 @@ baseurl:
 #
 # basic settings
 #
-title: req42 FAQ
-description: frequently asked questions on req42.
+title: req42 Docs
+description: req42 documentation, help and tips
 avatar: /assets/img/avatar.png
 language: en
 
