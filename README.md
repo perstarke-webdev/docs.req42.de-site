@@ -1,11 +1,11 @@
-# req42 Frequently Asked Questions
+# req42 Documentation, help and tips
 
-Here we collect answers to frequently asked questions on req42.
+Here we collect tips on using req42.
 
 It's powered by Jekyll and a modified TTSCK theme (see below).
 
 ## License
-As all of the req42 content, this FAQ is free to use under a liberal Creative-Commons
+As all of the req42 content, this docs is free to use under a liberal Creative-Commons
 license:
 
 ![](https://i.creativecommons.org/l/by-sa/4.0/88x31.png)
