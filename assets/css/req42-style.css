@@ -28,5 +28,9 @@ p {
     text-decoration: none;
 }
 
+hr.content-sep {
+    margin: 50px 0px 35px 0px;
+    border-top: 2px solid #b8ddeb;
+}
 
 

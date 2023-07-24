@@ -41,9 +41,10 @@ regarding [req42](https://req42.de/en), organized in the following categories:
 |-----------------|----------------------------|
 
 
+<hr class="content-sep">
 
 
-#### If you have additional questions...
+## If you have additional questions
 
-Just in case **your** question(s) regarding req42 and its usage in
-practical situations are still missing ... please let us [**know here**](/contact/).
+Just in case **you** have any unanswered questions regarding req42 and its usage in practical situations... <br>
+Please let us [**know here**](/contact/).
