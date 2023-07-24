@@ -24,7 +24,6 @@ p {
 
 .styled-button:hover {
     background-color: #1c2e4a; /* A slightly darker shade of $brand-color */
-    color: #d7ecf8; /* $site-title-color */
     text-decoration: none;
 }
 
