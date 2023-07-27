@@ -5,11 +5,63 @@ permalink: /category_a/
 order: 3
 ---
 
+<div id="tags">
+    <ul class="tag-box inline">
+        {% assign selected_posts = site.posts | where: "categories", "01-Visions:Goals" | reverse %}
+        {% assign posts_size = selected_posts | size %}
+        <li><a href="#1"> Section 01: Business Goals <span>{{ posts_size }}</span></a></li>
+
+        {% assign selected_posts = site.posts | where: "categories", "02-Stakeholder" | reverse %}
+        {% assign posts_size = selected_posts | size %}
+        <li><a href="#2"> Section 02: Stakeholders <span>{{ posts_size }}</span></a></li>
+
+        {% assign selected_posts = site.posts | where: "categories", "03-Scope" | reverse %}
+        {% assign posts_size = selected_posts | size %}
+        <li><a href="#3"> Section 03: Scope<span>{{ posts_size }}</span></a></li>
+
+        {% assign selected_posts = site.posts | where: "categories", "04-Product Backlog" | reverse %}
+        {% assign posts_size = selected_posts | size %}
+        <li><a href="#4">Section 04: Product Backlog <span>{{ posts_size }}</span></a></li>
+
+        {% assign selected_posts = site.posts | where: "categories", "05-Supporting Models" | reverse %}
+        {% assign posts_size = selected_posts | size %}
+        <li><a href="#5">Section 05: Supporting Models <span>{{ posts_size }}</span></a></li>
+
+        {% assign selected_posts = site.posts | where: "categories", "06-Quality Requirements" | reverse %}
+        {% assign posts_size = selected_posts | size %}
+        <li><a href="#6">Section 06: Quality Requirements <span>{{ posts_size }}</span></a></li>
+
+        {% assign selected_posts = site.posts | where: "categories", "07-Constraints" | reverse %}
+        {% assign posts_size = selected_posts | size %}
+        <li><a href="#7">Section 07: Constraints <span>{{ posts_size }}</span></a></li>
+
+        {% assign selected_posts = site.posts | where: "categories", "08-Domain Terminology" | reverse %}
+        {% assign posts_size = selected_posts | size %}
+        <li><a href="#8">Section 08: Domain Terminology <span>{{ posts_size }}</span></a></li>
+
+        {% assign selected_posts = site.posts | where: "categories", "09-Assets" | reverse %}
+        {% assign posts_size = selected_posts | size %}
+        <li><a href="#9">Section 09: Assets <span>{{ posts_size }}</span></a></li>
+
+        {% assign selected_posts = site.posts | where: "categories", "10-Teams" | reverse %}
+        {% assign posts_size = selected_posts | size %}
+        <li><a href="#10">Section 10: Teams <span>{{ posts_size }}</span></a></li>
+
+        {% assign selected_posts = site.posts | where: "categories", "11-Roadmap" | reverse %}
+        {% assign posts_size = selected_posts | size %}
+        <li><a href="#11">Section 11: Roadmap <span>{{ posts_size }}</span></a></li>
+
+        {% assign selected_posts = site.posts | where: "categories", "12-Risks:Assumptions" | reverse %}
+        {% assign posts_size = selected_posts | size %}
+        <li><a href="#12">Section 12: Risks / Assumptions <span>{{ posts_size }}</span></a></li>
+    </ul>
+</div>
+
 <div id="search-results">
     <hr id="first-hr" class="with-no-margin"/>
 
 
-    <h2> Section 01: Business Goals</h2>
+    <h2 id="1"> Section 01: Business Goals</h2>
     {% assign selected_posts = site.posts | where: "categories", "01-Visions:Goals" | reverse %}
     {% for post in selected_posts  %}
     <div class="article-wrapper">
@@ -21,7 +73,7 @@ order: 3
     {% endfor %}
 
 
-    <h2> Section 02: Stakeholders</h2>
+    <h2 id="2"> Section 02: Stakeholders</h2>
     {% assign selected_posts = site.posts | where: "categories", "02-Stakeholder" | reverse %}
     {% for post in selected_posts  %}
     <div class="article-wrapper">
@@ -33,8 +85,8 @@ order: 3
     {% endfor %}
 
 
-    <h2> Section 03: Scope</h2>
-    {% assign selected_posts = site.posts | where: "categories", "02-Scope" | reverse %}
+    <h2 id="3"> Section 03: Scope</h2>
+    {% assign selected_posts = site.posts | where: "categories", "03-Scope" | reverse %}
     {% for post in selected_posts  %}
     <div class="article-wrapper">
         <article>
@@ -45,7 +97,7 @@ order: 3
     {% endfor %}
 
 
-    <h2> Section 04: Product Backlog</h2>
+    <h2 id="4"> Section 04: Product Backlog</h2>
     {% assign selected_posts = site.posts | where: "categories", "04-Product Backlog" | reverse %}
     {% for post in selected_posts  %}
     <div class="article-wrapper">
@@ -57,7 +109,7 @@ order: 3
     {% endfor %}
 
 
-    <h2> Section 05: Supporting Models</h2>
+    <h2 id="5"> Section 05: Supporting Models</h2>
     {% assign selected_posts = site.posts | where: "categories", "05-Supporting Models" | reverse %}
     {% for post in selected_posts  %}
     <div class="article-wrapper">
@@ -69,7 +121,7 @@ order: 3
     {% endfor %}
 
 
-    <h2> Section 06: Quality Requirements</h2>
+    <h2 id="6"> Section 06: Quality Requirements</h2>
     {% assign selected_posts = site.posts | where: "categories", "06-Quality Requirements" | reverse %}
     {% for post in selected_posts  %}
     <div class="article-wrapper">
@@ -81,7 +133,7 @@ order: 3
     {% endfor %}
 
 
-    <h2> Section 07: Constraints</h2>
+    <h2 id="7"> Section 07: Constraints</h2>
     {% assign selected_posts = site.posts | where: "categories", "07-Constraints" | reverse %}
     {% for post in selected_posts  %}
     <div class="article-wrapper">
@@ -93,7 +145,7 @@ order: 3
     {% endfor %}
 
 
-    <h2> Section 08: Domain Terminology</h2>
+    <h2 id="8"> Section 08: Domain Terminology</h2>
     {% assign selected_posts = site.posts | where: "categories", "08-Domain Terminology" | reverse %}
     {% for post in selected_posts  %}
     <div class="article-wrapper">
@@ -105,7 +157,7 @@ order: 3
     {% endfor %}
 
 
-    <h2> Section 09: Assets</h2>
+    <h2 id="9"> Section 09: Assets</h2>
     {% assign selected_posts = site.posts | where: "categories", "09-Assets" | reverse %}
     {% for post in selected_posts  %}
     <div class="article-wrapper">
@@ -117,7 +169,7 @@ order: 3
     {% endfor %}
 
 
-    <h2> Section 10: Teams</h2>
+    <h2 id="10"> Section 10: Teams</h2>
     {% assign selected_posts = site.posts | where: "categories", "10-Teams" | reverse %}
     {% for post in selected_posts  %}
     <div class="article-wrapper">
@@ -129,7 +181,7 @@ order: 3
     {% endfor %}
 
 
-    <h2> Section 11: Roadmap</h2>
+    <h2 id="11"> Section 11: Roadmap</h2>
     {% assign selected_posts = site.posts | where: "categories", "11-Roadmap" | reverse %}
     {% for post in selected_posts  %}
     <div class="article-wrapper">
@@ -141,7 +193,7 @@ order: 3
     {% endfor %}
 
 
-    <h2> Section 12: Risks / Assumptions </h2>
+    <h2 id="12"> Section 12: Risks / Assumptions </h2>
     {% assign selected_posts = site.posts | where: "categories", "12-Risks:Assumptions" | reverse %}
     {% for post in selected_posts  %}
     <div class="article-wrapper">
