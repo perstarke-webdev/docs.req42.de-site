@@ -5,16 +5,12 @@ order: 0
 permalink: /home/
 ---
 
-{% assign categoryA_posts = site.posts | where: "categories", "A-general" %}
-{% assign categoryB_posts = site.posts | where: "categories", "B-method" %}
-{% assign categoryC_posts = site.posts | where: "categories", "C-artifacts" %}
-{% assign categoryD_posts = site.posts | where: "categories", "D-agile" %}
+{% assign categoryA_posts = site.posts | where: "categories", "A-sections" %}
+{% assign categoryB_posts = site.posts | where: "categories", "B-documentation" %}
+{% assign categoryC_posts = site.posts | where: "categories", "C-agility" %}
+{% assign categoryD_posts = site.posts | where: "categories", "D-clean_start" %}
 {% assign categoryE_posts = site.posts | where: "categories", "E-tools" %}
-{% assign categoryF_posts = site.posts | where: "categories", "F-versions" %}
-{% assign categoryG_posts = site.posts | where: "categories", "G-traceability" %}
-{% assign categoryH_posts = site.posts | where: "categories", "H-management" %}
-{% assign categoryI_posts = site.posts | where: "categories", "I-customizing" %}
-
+{% assign categoryF_posts = site.posts | where: "categories", "F-FAQs" %}
 
 On this site you find [(currently {{ site.posts | size }}) practical tips](/keywords)
 regarding [req42](https://req42.de/en), organized in the following categories:
