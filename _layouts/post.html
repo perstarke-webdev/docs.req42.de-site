@@ -4,10 +4,27 @@ layout: default
 
 <div class="article-wrapper">
     <article>
-        {% include article-header.html page=page link=false share=page.share %}
-        <section class="post-content">
+        <header>
             <div class="panel">
-            <h1 class="post-title-in-content">{{ page.title }}</h1>
+                <h1 class="post-title">
+                    {{ page.title }}
+                </h1>
+
+                <ul class="tags">
+                    {% assign tags_num = (page.tags | size) %}
+                    {% if tags_num > 0 %}
+                    <li><i class="fa fa-tags"></i></li>
+                    {% endif %}
+                    {% for tag in page.tags %}
+                    <li>
+                        <a class="tag" href="/keywords#{{tag}}">#{{ tag }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </header>
+
+        <section class="post-content">
             {{ content }}
         </section>
         {% include article-footer.html page=page share=page.share %}
@@ -16,15 +33,13 @@ layout: default
 
 
 
-
-
 <script>
     function removeLeadingZeros(title) {
       return title.replace(/\b0+(\d+)/g, '$1');
     }
 
-    // Get all the post titles in the post content and remove leading zeros before displaying them.
-    const postTitles = document.querySelectorAll('.article-wrapper .post-content h1.post-title-in-content');
+    // Get all the post titles and remove leading zeros before displaying them.
+    const postTitles = document.querySelectorAll('.article-wrapper .post-title');
     postTitles.forEach((titleElement) => {
       const originalTitle = titleElement.textContent.trim();
       const trimmedTitle = removeLeadingZeros(originalTitle);
