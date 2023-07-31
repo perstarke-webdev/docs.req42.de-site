@@ -28,15 +28,15 @@ order: 7
 
 
 <script>
-    function removeLeadingZeros() {
-      const articleTitles = document.querySelectorAll('.article-wrapper h1[data-original-title]');
-      articleTitles.forEach((titleElement) => {
-        const originalTitle = titleElement.getAttribute('data-original-title');
-        const trimmedTitle = originalTitle.replace(/\b0+(\d+)/g, '$1');
-        titleElement.textContent = trimmedTitle;
-      });
+    function removeLeadingZeros(title) {
+      return title.replace(/\b0+(\d+)/g, '$1');
     }
 
-    // Run the function after the content is loaded
-    document.addEventListener('DOMContentLoaded', removeLeadingZeros);
-    </script>
+    // Get all the article titles and remove leading zeros before displaying them.
+    const articleTitles = document.querySelectorAll('.article-wrapper h1 a.post-link');
+    articleTitles.forEach((linkElement) => {
+      const originalTitle = linkElement.textContent.trim();
+      const trimmedTitle = removeLeadingZeros(originalTitle);
+      linkElement.textContent = trimmedTitle;
+    });
+  </script>

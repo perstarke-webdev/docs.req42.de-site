@@ -1,12 +1,13 @@
 {% assign page = include.page %}
+{% assign title = page.title %}
 
 <header>
     <div class="panel">
-        <h1>
+        <h1 data-original-title="{{ title }}">
             {% if include.link %}
-            <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+            <a class="post-link" href="{{ page.url | prepend: site.baseurl }}">{{ title }}</a>
             {% else %}
-            {{ page.title }}
+            {{ title }}
             {% endif %}
         </h1>
 
@@ -22,6 +23,4 @@
             {% endfor %}
         </ul>
     </div>
-
-
 </header>

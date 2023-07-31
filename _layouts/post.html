@@ -6,6 +6,8 @@ layout: default
     <article>
         {% include article-header.html page=page link=false share=page.share %}
         <section class="post-content">
+            <div class="panel">
+            <h1 class="post-title-in-content">{{ page.title }}</h1>
             {{ content }}
         </section>
         {% include article-footer.html page=page share=page.share %}
@@ -13,8 +15,19 @@ layout: default
 </div>
 
 
-{% if site.show-subtle-ads %}
-<section class="subtle-ads">
-  {% include subtle-ads/subtle-ads.html %}
-</section>
-{% endif %}
+
+
+
+<script>
+    function removeLeadingZeros(title) {
+      return title.replace(/\b0+(\d+)/g, '$1');
+    }
+
+    // Get all the post titles in the post content and remove leading zeros before displaying them.
+    const postTitles = document.querySelectorAll('.article-wrapper .post-content h1.post-title-in-content');
+    postTitles.forEach((titleElement) => {
+      const originalTitle = titleElement.textContent.trim();
+      const trimmedTitle = removeLeadingZeros(originalTitle);
+      titleElement.textContent = trimmedTitle;
+    });
+</script>

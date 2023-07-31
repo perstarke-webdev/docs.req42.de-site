@@ -10,12 +10,33 @@ order: 8
 
 
     {% assign selected_posts = site.posts | where: "categories", "F-FAQs" | reverse %}
-    {% for post in selected_posts  %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+
+    {% for title in sorted_titles %}
     <div class="article-wrapper">
         <article>
+            {% assign post = selected_posts | where: "title", title | first %}
             {% include article-header.html page=post link=true share=false %}
         </article>
     </div>
     <hr class="with-no-margin"/>
     {% endfor %}
 </div>
+
+
+
+
+
+<script>
+    function removeLeadingZeros(title) {
+      return title.replace(/\b0+(\d+)/g, '$1');
+    }
+
+    // Get all the article titles and remove leading zeros before displaying them.
+    const articleTitles = document.querySelectorAll('.article-wrapper h1 a.post-link');
+    articleTitles.forEach((linkElement) => {
+      const originalTitle = linkElement.textContent.trim();
+      const trimmedTitle = removeLeadingZeros(originalTitle);
+      linkElement.textContent = trimmedTitle;
+    });
+  </script>
