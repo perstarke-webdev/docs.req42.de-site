@@ -7,51 +7,51 @@ order: 3
 
 <div id="tags">
     <ul class="tag-box inline">
-        {% assign selected_posts = site.posts | where: "categories", "01-Visions:Goals" | reverse %}
+        {% assign selected_posts = site.posts | where: "categories", "01-Visions:Goals" %}
         {% assign posts_size = selected_posts | size %}
         <li><a href="#1"> Section 01: Business Goals <span>{{ posts_size }}</span></a></li>
 
-        {% assign selected_posts = site.posts | where: "categories", "02-Stakeholder" | reverse %}
+        {% assign selected_posts = site.posts | where: "categories", "02-Stakeholder" %}
         {% assign posts_size = selected_posts | size %}
         <li><a href="#2"> Section 02: Stakeholders <span>{{ posts_size }}</span></a></li>
 
-        {% assign selected_posts = site.posts | where: "categories", "03-Scope" | reverse %}
+        {% assign selected_posts = site.posts | where: "categories", "03-Scope" %}
         {% assign posts_size = selected_posts | size %}
         <li><a href="#3"> Section 03: Scope<span>{{ posts_size }}</span></a></li>
 
-        {% assign selected_posts = site.posts | where: "categories", "04-Product Backlog" | reverse %}
+        {% assign selected_posts = site.posts | where: "categories", "04-Product Backlog" %}
         {% assign posts_size = selected_posts | size %}
         <li><a href="#4">Section 04: Product Backlog <span>{{ posts_size }}</span></a></li>
 
-        {% assign selected_posts = site.posts | where: "categories", "05-Supporting Models" | reverse %}
+        {% assign selected_posts = site.posts | where: "categories", "05-Supporting Models" %}
         {% assign posts_size = selected_posts | size %}
         <li><a href="#5">Section 05: Supporting Models <span>{{ posts_size }}</span></a></li>
 
-        {% assign selected_posts = site.posts | where: "categories", "06-Quality Requirements" | reverse %}
+        {% assign selected_posts = site.posts | where: "categories", "06-Quality Requirements" %}
         {% assign posts_size = selected_posts | size %}
         <li><a href="#6">Section 06: Quality Requirements <span>{{ posts_size }}</span></a></li>
 
-        {% assign selected_posts = site.posts | where: "categories", "07-Constraints" | reverse %}
+        {% assign selected_posts = site.posts | where: "categories", "07-Constraints" %}
         {% assign posts_size = selected_posts | size %}
         <li><a href="#7">Section 07: Constraints <span>{{ posts_size }}</span></a></li>
 
-        {% assign selected_posts = site.posts | where: "categories", "08-Domain Terminology" | reverse %}
+        {% assign selected_posts = site.posts | where: "categories", "08-Domain Terminology" %}
         {% assign posts_size = selected_posts | size %}
         <li><a href="#8">Section 08: Domain Terminology <span>{{ posts_size }}</span></a></li>
 
-        {% assign selected_posts = site.posts | where: "categories", "09-Assets" | reverse %}
+        {% assign selected_posts = site.posts | where: "categories", "09-Assets" %}
         {% assign posts_size = selected_posts | size %}
         <li><a href="#9">Section 09: Assets <span>{{ posts_size }}</span></a></li>
 
-        {% assign selected_posts = site.posts | where: "categories", "10-Teams" | reverse %}
+        {% assign selected_posts = site.posts | where: "categories", "10-Teams" %}
         {% assign posts_size = selected_posts | size %}
         <li><a href="#10">Section 10: Teams <span>{{ posts_size }}</span></a></li>
 
-        {% assign selected_posts = site.posts | where: "categories", "11-Roadmap" | reverse %}
+        {% assign selected_posts = site.posts | where: "categories", "11-Roadmap" %}
         {% assign posts_size = selected_posts | size %}
         <li><a href="#11">Section 11: Roadmap <span>{{ posts_size }}</span></a></li>
 
-        {% assign selected_posts = site.posts | where: "categories", "12-Risks:Assumptions" | reverse %}
+        {% assign selected_posts = site.posts | where: "categories", "12-Risks:Assumptions" %}
         {% assign posts_size = selected_posts | size %}
         <li><a href="#12">Section 12: Risks / Assumptions <span>{{ posts_size }}</span></a></li>
     </ul>
@@ -78,7 +78,7 @@ order: 3
 
 
     <h2 id="2"> Section 02: Stakeholders</h2>
-    {% assign selected_posts = site.posts | where: "categories", "02-Stakeholder" | reverse %}
+    {% assign selected_posts = site.posts | where: "categories", "02-Stakeholder" %}
     {% assign sorted_titles = selected_posts | map: "title" | sort %}
 
     {% for title in sorted_titles %}
@@ -93,7 +93,7 @@ order: 3
 
 
     <h2 id="3"> Section 03: Scope</h2>
-    {% assign selected_posts = site.posts | where: "categories", "03-Scope" | reverse %}
+    {% assign selected_posts = site.posts | where: "categories", "03-Scope" %}
     {% assign sorted_titles = selected_posts | map: "title" | sort %}
 
     {% for title in sorted_titles %}
@@ -108,7 +108,7 @@ order: 3
 
 
     <h2 id="4"> Section 04: Product Backlog</h2>
-    {% assign selected_posts = site.posts | where: "categories", "04-Product Backlog" | reverse %}
+    {% assign selected_posts = site.posts | where: "categories", "04-Product Backlog" %}
     {% assign sorted_titles = selected_posts | map: "title" | sort %}
 
     {% for title in sorted_titles %}
@@ -123,7 +123,7 @@ order: 3
 
 
     <h2 id="5"> Section 05: Supporting Models</h2>
-    {% assign selected_posts = site.posts | where: "categories", "05-Supporting Models" | reverse %}
+    {% assign selected_posts = site.posts | where: "categories", "05-Supporting Models" %}
     {% assign sorted_titles = selected_posts | map: "title" | sort %}
 
     {% for title in sorted_titles %}
@@ -138,7 +138,7 @@ order: 3
 
 
     <h2 id="6"> Section 06: Quality Requirements</h2>
-    {% assign selected_posts = site.posts | where: "categories", "06-Quality Requirements" | reverse %}
+    {% assign selected_posts = site.posts | where: "categories", "06-Quality Requirements" %}
     {% assign sorted_titles = selected_posts | map: "title" | sort %}
 
     {% for title in sorted_titles %}
@@ -153,7 +153,7 @@ order: 3
 
 
     <h2 id="7"> Section 07: Constraints</h2>
-    {% assign selected_posts = site.posts | where: "categories", "07-Constraints" | reverse %}
+    {% assign selected_posts = site.posts | where: "categories", "07-Constraints" %}
     {% assign sorted_titles = selected_posts | map: "title" | sort %}
 
     {% for title in sorted_titles %}
@@ -167,7 +167,7 @@ order: 3
     {% endfor %}
 
     <h2 id="8"> Section 08: Domain Terminology</h2>
-    {% assign selected_posts = site.posts | where: "categories", "08-Domain Terminology" | reverse %}
+    {% assign selected_posts = site.posts | where: "categories", "08-Domain Terminology" %}
     {% assign sorted_titles = selected_posts | map: "title" | sort %}
 
     {% for title in sorted_titles %}
@@ -182,7 +182,7 @@ order: 3
 
 
     <h2 id="9"> Section 09: Assets</h2>
-    {% assign selected_posts = site.posts | where: "categories", "09-Assets" | reverse %}
+    {% assign selected_posts = site.posts | where: "categories", "09-Assets" %}
     {% assign sorted_titles = selected_posts | map: "title" | sort %}
 
     {% for title in sorted_titles %}
@@ -197,7 +197,7 @@ order: 3
 
 
     <h2 id="10"> Section 10: Teams</h2>
-    {% assign selected_posts = site.posts | where: "categories", "10-Teams" | reverse %}
+    {% assign selected_posts = site.posts | where: "categories", "10-Teams" %}
     {% assign sorted_titles = selected_posts | map: "title" | sort %}
 
     {% for title in sorted_titles %}
@@ -212,7 +212,7 @@ order: 3
 
 
     <h2 id="11"> Section 11: Roadmap</h2>
-    {% assign selected_posts = site.posts | where: "categories", "11-Roadmap" | reverse %}
+    {% assign selected_posts = site.posts | where: "categories", "11-Roadmap" %}
     {% assign sorted_titles = selected_posts | map: "title" | sort %}
 
     {% for title in sorted_titles %}
@@ -227,7 +227,7 @@ order: 3
 
 
     <h2 id="12"> Section 12: Risks / Assumptions </h2>
-    {% assign selected_posts = site.posts | where: "categories", "12-Risks:Assumptions" | reverse %}
+    {% assign selected_posts = site.posts | where: "categories", "12-Risks:Assumptions" %}
     {% assign sorted_titles = selected_posts | map: "title" | sort %}
 
     {% for title in sorted_titles %}

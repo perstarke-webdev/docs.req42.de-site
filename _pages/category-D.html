@@ -9,7 +9,7 @@ order: 6
     <hr id="first-hr" class="with-no-margin"/>
 
 
-    {% assign selected_posts = site.posts | where: "categories", "D-clean_start" | reverse %}
+    {% assign selected_posts = site.posts | where: "categories", "D-clean_start" %}
     {% assign sorted_titles = selected_posts | map: "title" | sort %}
 
     {% for title in sorted_titles %}

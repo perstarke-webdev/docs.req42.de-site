@@ -8,13 +8,210 @@ order: 15
 <div id="search-results">
     <hr id="first-hr" class="with-no-margin"/>
 
-    {% assign sorted_posts = site.posts | sort_by: 'title' | reverse %}
-    {% for post in sorted_posts  %}
+
+    <!-- Category A, because this contains several sections, all are displayed by one, for correct sorting -->
+
+    {% assign selected_posts = site.posts | where: "categories", "01-Visions:Goals" %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+    {% for title in sorted_titles %}
+    <div class="article-wrapper">
+        <article>
+            {% assign post = selected_posts | where: "title", title | first %}
+            {% include article-header.html page=post link=true share=false %}
+        </article>
+    </div>
+    {% endfor %}
+
+
+
+
+    {% assign selected_posts = site.posts | where: "categories", "02-Stakeholder" %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+    {% for title in sorted_titles %}
+    <div class="article-wrapper">
+        <article>
+            {% assign post = selected_posts | where: "title", title | first %}
+            {% include article-header.html page=post link=true share=false %}
+        </article>
+    </div>
+    {% endfor %}
+
+
+
+    {% assign selected_posts = site.posts | where: "categories", "03-Scope" %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+    {% for title in sorted_titles %}
+    <div class="article-wrapper">
+        <article>
+            {% assign post = selected_posts | where: "title", title | first %}
+            {% include article-header.html page=post link=true share=false %}
+        </article>
+    </div>
+    {% endfor %}
+
+
+
+    {% assign selected_posts = site.posts | where: "categories", "04-Product Backlog" %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+    {% for title in sorted_titles %}
+    <div class="article-wrapper">
+        <article>
+            {% assign post = selected_posts | where: "title", title | first %}
+            {% include article-header.html page=post link=true share=false %}
+        </article>
+    </div>
+    {% endfor %}
+
+
+
+    {% assign selected_posts = site.posts | where: "categories", "05-Supporting Models" %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+    {% for title in sorted_titles %}
+    <div class="article-wrapper">
+        <article>
+            {% assign post = selected_posts | where: "title", title | first %}
+            {% include article-header.html page=post link=true share=false %}
+        </article>
+    </div>
+    {% endfor %}
+
+
+
+    {% assign selected_posts = site.posts | where: "categories", "06-Quality Requirements" %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+    {% for title in sorted_titles %}
+    <div class="article-wrapper">
+        <article>
+            {% assign post = selected_posts | where: "title", title | first %}
+            {% include article-header.html page=post link=true share=false %}
+        </article>
+    </div>
+    {% endfor %}
+
+
+
+    {% assign selected_posts = site.posts | where: "categories", "07-Constraints" %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+    {% for title in sorted_titles %}
+    <div class="article-wrapper">
+        <article>
+            {% assign post = selected_posts | where: "title", title | first %}
+            {% include article-header.html page=post link=true share=false %}
+        </article>
+    </div>
+    {% endfor %}
+
+
+    {% assign selected_posts = site.posts | where: "categories", "08-Domain Terminology" %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+    {% for title in sorted_titles %}
+    <div class="article-wrapper">
+        <article>
+            {% assign post = selected_posts | where: "title", title | first %}
+            {% include article-header.html page=post link=true share=false %}
+        </article>
+    </div>
+    {% endfor %}
+
+
+
+    {% assign selected_posts = site.posts | where: "categories", "09-Assets" %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+    {% for title in sorted_titles %}
+    <div class="article-wrapper">
+        <article>
+            {% assign post = selected_posts | where: "title", title | first %}
+            {% include article-header.html page=post link=true share=false %}
+        </article>
+    </div>
+    {% endfor %}
+
+
+
+    {% assign selected_posts = site.posts | where: "categories", "10-Teams" %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+    {% for title in sorted_titles %}
+    <div class="article-wrapper">
+        <article>
+            {% assign post = selected_posts | where: "title", title | first %}
+            {% include article-header.html page=post link=true share=false %}
+        </article>
+    </div>
+    {% endfor %}
+
+
+
+    {% assign selected_posts = site.posts | where: "categories", "11-Roadmap" %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+    {% for title in sorted_titles %}
+    <div class="article-wrapper">
+        <article>
+            {% assign post = selected_posts | where: "title", title | first %}
+            {% include article-header.html page=post link=true share=false %}
+        </article>
+    </div>
+    {% endfor %}
+
+
+
+    {% assign selected_posts = site.posts | where: "categories", "12-Risks:Assumptions" %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+
+    {% for title in sorted_titles %}
+    <div class="article-wrapper">
+        <article>
+            {% assign post = selected_posts | where: "title", title | first %}
+            {% include article-header.html page=post link=true share=false %}
+        </article>
+    </div>
+    {% endfor %}
+
+
+
+    <!-- All other categories -->
+
+
+    {% assign selected_posts = site.posts %}
+    {% assign sorted_titles = selected_posts | map: "title" | sort %}
+
+    {% for title in sorted_titles %}
+    {% assign post = selected_posts | where: "title", title | first %}
+    {% unless post.categories contains "A-sections" %}
     <div class="article-wrapper">
         <article>
             {% include article-header.html page=post link=true share=false %}
         </article>
     </div>
-    <hr class="with-no-margin"/>
+    {% endunless %}
     {% endfor %}
+
+
+
+
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    function removeLeadingZeros(title) {
+      return title.replace(/\b0+(\d+)/g, '$1');
+    }
+
+    // Get all the article titles and remove leading zeros before displaying them.
+    const articleTitles = document.querySelectorAll('.article-wrapper h1 a.post-link');
+    articleTitles.forEach((linkElement) => {
+      const originalTitle = linkElement.textContent.trim();
+      const trimmedTitle = removeLeadingZeros(originalTitle);
+      linkElement.textContent = trimmedTitle;
+    });
+  </script>
