@@ -6,16 +6,15 @@ order: 16
 share: false
 ---
 
-
 {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
 
 <div id="tags">
   <ul class="tag-box inline">
     {% assign tag_words = site_tags | split: ',' | sort_natural %}
     {% for tag in tag_words %}
-    {% unless tag == ""%}
-    {% assign tag_size = site.tags[tag] | size  %}
-    {% unless tag_size  == 0%}
+    {% unless tag == "" %}
+    {% assign tag_size = site.tags[tag] | size %}
+    {% unless tag_size  == 0 %}
     <li><a href="#{{ tag | cgi_escape }}">{{ tag }} <span>{{ tag_size }}</span></a></li>
     {% endunless %}
     {% endunless %}
@@ -41,20 +40,32 @@ share: false
   tagsArray.forEach(function (tag) {
     tagsContainer.appendChild(tag);
   });
+
+  // Function to remove leading zeros from titles
+  function removeLeadingZerosFromTitles() {
+    var postTitles = document.querySelectorAll('.posts a');
+    postTitles.forEach(function (titleElement) {
+      var originalTitle = titleElement.textContent.trim();
+      var trimmedTitle = originalTitle.replace(/\b0+(\d+)/g, '$1');
+      titleElement.textContent = trimmedTitle;
+    });
+  }
+
+  // Run the function after the content is loaded
+  document.addEventListener('DOMContentLoaded', removeLeadingZerosFromTitles);
 </script>
 
-
-
-  {% for item in (0..site.tags.size) %}{% unless forloop.last %}
-    {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+{% for item in (0..site.tags.size) %}{% unless forloop.last %}
+{% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
 {% assign sorted_posts = site.tags[this_word] | sort_by: 'title'  | reverse %}
 {% assign posts_size = sorted_posts | size %}
 {% unless posts_size == 0%}
-  <h2 id="{{ this_word | cgi_escape }}">{{ this_word }}</h2>
-  <ul class="posts">
-    {% for post in sorted_posts %}{% if post.title != null %}
-    <li> <a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endif %}{% endfor %}
-  </ul>
-  {% endunless %}{% endunless %}{% endfor %}
+<h2 id="{{ this_word | cgi_escape }}">{{ this_word }}</h2>
+<ul class="posts">
+  {% for post in sorted_posts %}{% if post.title != null %}
+  <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+  {% endif %}{% endfor %}
+</ul>
+{% endunless %}
+{% endunless %}{% endfor %}
 </div>
